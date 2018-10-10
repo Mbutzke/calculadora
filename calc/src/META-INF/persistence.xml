@@ -6,7 +6,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Aqui são listadas todas as entidades -->
-        <class>br.edu.ifro.Aluno</class>
+        <class>br.edu.ifro.modelo.Aluno</class>
 
         <properties>            
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
