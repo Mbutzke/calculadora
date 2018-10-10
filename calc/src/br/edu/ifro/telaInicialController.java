@@ -40,13 +40,7 @@ public class telaInicialController implements Initializable {
            Double num1 = Double.parseDouble (txtNum1.getText()); 
            Double num2 = Double.parseDouble (txtNum2.getText()); 
                      Double result = num1 + num2;  
-          
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("aula");
-            EntityManager em = emf.createEntityManager();
-                telaInicialController numero1 = new telaInicialController();
-                    numero1.setNum1(txtNum1.getText());
-                    
-                txtResult.setText(result.toString());
+          txtResult.setText(result.toString());
                 txtNum1.setText("");
                 txtNum2.setText("");
     }
