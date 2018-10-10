@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifro.CadastroUsuarioController">
+   <children>
+      <StackPane fx:id="dialogMessagen" prefHeight="400.0" prefWidth="600.0" />
+      <JFXTextField fx:id="txtUsuario" layoutX="198.0" layoutY="169.0" prefHeight="25.0" prefWidth="198.0" promptText="Usuario" />
+      <JFXPasswordField fx:id="senha" layoutX="196.0" layoutY="218.0" prefHeight="26.0" prefWidth="198.0" promptText="Senha" />
+      <JFXPasswordField fx:id="repetirSenha" layoutX="195.0" layoutY="269.0" prefHeight="26.0" prefWidth="198.0" promptText="Repetir Senha" />
+      <JFXButton fx:id="btnCriarConta" layoutX="303.0" layoutY="320.0" onAction="#verificacoes" prefHeight="35.0" prefWidth="88.0" text="Cadastrar" />
+      <JFXButton fx:id="btnFechar" layoutX="199.0" layoutY="320.0" onAction="#fecharPrograma" prefHeight="35.0" prefWidth="88.0" text="Fechar" />
+   </children>
+</AnchorPane>
