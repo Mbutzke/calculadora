@@ -21,6 +21,11 @@ public class historico {
 private Integer id;
 private String Num1, Num2, Result, Operador;
 
+
+    public String toString(){
+        return id + Num1 + Num2 + Result + Operador;
+    }
+
     public Integer getId() {
         return id;
     }

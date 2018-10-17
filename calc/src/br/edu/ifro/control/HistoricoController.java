@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
@@ -54,12 +55,16 @@ public class HistoricoController implements Initializable {
         EntityManager em = emf.createEntityManager();
         
         Query query = em.createQuery("SELECT a FROM historico a");
-        query.setParameter("nomeAluno", "%"+txtAluno.getText()+"%");
+        query.setParameter("nomeAluno", "%" + txtAluno.getText()+"%");
         
         List<historico> historico = query.getResultList();
         
         ObservableList oAlunos = FXCollections.observableArrayList(historico);
    
         tbAlunos.setItems(oAlunos);
+    }
+     @FXML
+    private void FecharTela(ActionEvent event) {
+                System.exit(0);
     }
 }

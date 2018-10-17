@@ -163,19 +163,14 @@ public class telaInicialController implements Initializable {
     }    
 
     @FXML
-    private void abrirHist(ActionEvent event) throws IOException{
-                 try{
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("Historico.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(),900,682);
-                    Stage stage = new Stage();
-                    stage.setTitle("History");
-                    stage.setScene(scene);
-                    stage.show();
-                }
-                catch(IOException e){
-
-}
+    private void abrirHist(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("Historico.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(),900,682);
+        Stage stage = new Stage();
+        stage.setTitle("History");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
