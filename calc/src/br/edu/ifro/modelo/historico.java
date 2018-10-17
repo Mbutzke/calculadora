@@ -5,6 +5,7 @@
  */
 package br.edu.ifro.modelo;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,11 +14,12 @@ import javax.persistence.Id;
  *
  * @author 00080339271
  */
+@Entity
 public class historico {
 @Id 
 @GeneratedValue (strategy = GenerationType.IDENTITY)
 private Integer id;
-private String num1, num2, result, operador;
+private String Num1, Num2, Result, Operador;
 
     public Integer getId() {
         return id;
@@ -28,34 +30,35 @@ private String num1, num2, result, operador;
     }
 
     public String getNum1() {
-        return num1;
+        return Num1;
     }
 
-    public void setNum1(String num1) {
-        this.num1 = num1;
+    public void setNum1(String Num1) {
+        this.Num1 = Num1;
     }
 
     public String getNum2() {
-        return num2;
+        return Num2;
     }
 
-    public void setNum2(String num2) {
-        this.num2 = num2;
+    public void setNum2(String Num2) {
+        this.Num2 = Num2;
     }
 
     public String getResult() {
-        return result;
+        return Result;
     }
 
-    public void setResult(String result) {
-        this.result = result;
+    public void setResult(String Result) {
+        this.Result = Result;
     }
 
     public String getOperador() {
-        return operador;
+        return Operador;
     }
 
-    public void setOperador(String operador) {
-        this.operador = operador;
+    public void setOperador(String Operador) {
+        this.Operador = Operador;
     }
+
 }

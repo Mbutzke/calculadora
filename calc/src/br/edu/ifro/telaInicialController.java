@@ -5,6 +5,7 @@
  */
 package br.edu.ifro;
 
+import br.edu.ifro.modelo.historico;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -36,43 +37,119 @@ public class telaInicialController implements Initializable {
     @FXML
     private Button btnClean;
     @FXML
+    private String operador;
+    
+    @FXML
     private void Soma(ActionEvent event) {
-           Double num1 = Double.parseDouble (txtNum1.getText()); 
+        EntityManagerFactory emf= Persistence.createEntityManagerFactory("aula");
+        EntityManager em = emf.createEntityManager();
+        
+            historico historico = new historico ();
+            
+         
+        Double num1 = Double.parseDouble (txtNum1.getText()); 
            Double num2 = Double.parseDouble (txtNum2.getText()); 
                      Double result = num1 + num2;  
           txtResult.setText(result.toString());
                 txtNum1.setText("");
                 txtNum2.setText("");
+             historico.setNum1(txtNum1.getText());
+             historico.setNum2(txtNum2.getText());
+             historico.setResult(txtResult.getText());
+             historico.setOperador("+");
+             
+          em.getTransaction().begin();
+          
+          
+          em.persist(historico);
+          
+          em.getTransaction().commit();
+             
+                
     }
     
      @FXML
     private void Sub(ActionEvent event) {
+         EntityManagerFactory emf= Persistence.createEntityManagerFactory("aula");
+        EntityManager em = emf.createEntityManager();
+        
+            historico historico = new historico ();
            Double num1 = Double.parseDouble (txtNum1.getText()); 
            Double num2 = Double.parseDouble (txtNum2.getText()); 
                      Double result = num1 - num2;  
                  txtResult.setText(result.toString());
                 txtNum1.setText("");
                 txtNum2.setText("");
+                
+             historico.setNum1(txtNum1.getText());
+             historico.setNum2(txtNum2.getText());
+             historico.setResult(txtResult.getText());
+               historico.setOperador("-");
+               
+            em.getTransaction().begin();
+          
+          
+          em.persist(historico);
+          
+          em.getTransaction().commit();
+             
     }
     
      @FXML
     private void Mult(ActionEvent event) {
+            EntityManagerFactory emf= Persistence.createEntityManagerFactory("aula");
+        EntityManager em = emf.createEntityManager();
+        
+            historico historico = new historico ();
+            
            Double num1 = Double.parseDouble (txtNum1.getText()); 
            Double num2 = Double.parseDouble (txtNum2.getText()); 
                      Double result = num1 * num2;  
                  txtResult.setText(result.toString());
                   txtNum1.setText("");
                   txtNum2.setText("");
+                  
+             historico.setNum1(txtNum1.getText());
+             historico.setNum2(txtNum2.getText());
+             historico.setResult(txtResult.getText());
+               historico.setOperador("*");
+               
+          em.getTransaction().begin();
+          
+          
+          em.persist(historico);
+          
+          em.getTransaction().commit();
+             
     }
     
      @FXML
     private void Div(ActionEvent event) {
+        
+         EntityManagerFactory emf= Persistence.createEntityManagerFactory("aula");
+        EntityManager em = emf.createEntityManager();
+        
+            historico historico = new historico ();
+            
            Double num1 = Double.parseDouble (txtNum1.getText()); 
            Double num2 = Double.parseDouble (txtNum2.getText()); 
                      Double result = num1 / num2;  
                  txtResult.setText(result.toString());
                 txtNum1.setText("");
                 txtNum2.setText("");
+                
+             historico.setNum1(txtNum1.getText());
+             historico.setNum2(txtNum2.getText());
+             historico.setResult(txtResult.getText());
+               historico.setOperador("/");
+               
+         em.getTransaction().begin();
+          
+          
+          em.persist(historico);
+          
+          em.getTransaction().commit();
+             
     }
      @FXML
     private void Clean(ActionEvent event) {
@@ -86,10 +163,10 @@ public class telaInicialController implements Initializable {
     }    
 
     @FXML
-    private void abrirHist(ActionEvent event) {
+    private void abrirHist(ActionEvent event) throws IOException{
                  try{
                     FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("Histórico.fxml"));
+                    fxmlLoader.setLocation(getClass().getResource("Historico.fxml"));
                     Scene scene = new Scene(fxmlLoader.load(),900,682);
                     Stage stage = new Stage();
                     stage.setTitle("History");
